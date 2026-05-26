@@ -1,9 +1,10 @@
-# slim-skeleto
+# slim-skeleton
 
-![Packagist Downloads](https://img.shields.io/packagist/dt/supabase-php/supabase-client?style=for-the-badge&logo=composer)
+![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/sushilk/slim-skeleton/php?style=for-the-badge)
 ![GitHub Release](https://img.shields.io/github/v/release/Ashishkumbhar01/supabase-php?style=for-the-badge)
+![Packagist Downloads](https://img.shields.io/packagist/dt/sushilk/slim-skeleton?style=for-the-badge&logo=composer)
 ![GitHub License](https://img.shields.io/github/license/Ashishkumbhar01/supabase-php?style=for-the-badge)
-![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/supabase-php/supabase-client/php?style=for-the-badge)
+
 Slim Skeleton
 
 # Install
