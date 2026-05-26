@@ -1,1 +1,5 @@
+.env
 /vendor/
+/storage/cache/twig/*
+/storage/logs/*.log
+
