@@ -8,31 +8,11 @@ use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 
-$container = new DI\Container;
-
-AppFactory::setContainer($container);
-
 $app = AppFactory::create();
 
-$container = $app->getContainer();
-
-$twig = Twig::create(__DIR__.'/../views/templates', [
-    'cache' => __DIR__.'/../storage/cache/twig',
-    'auto_reload' => true,
-]);
+require __DIR__ . '/../bootstrap/App.php';
+require __DIR__ . '/../routes/route.php';
 
 $app->add(TwigMiddleware::create($app, $twig));
-
-$app->get('/', function (
-    Request $request,
-    Response $response
-) {
-    $view = Twig::fromRequest($request);
-
-    return $view->render($response, 'welcome.html.twig', [
-        'title' => 'Welcome to Slim Skeleton.',
-        'message' => 'Welcome to Slim 4!',
-    ]);
-});
 
 $app->run();
