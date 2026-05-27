@@ -2,17 +2,22 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 
+require __DIR__.'/../bootstrap/App.php';
+
+// $app->add(TwigMiddleware::create($app, $twig));
+
 $app = AppFactory::create();
 
-require __DIR__ . '/../bootstrap/App.php';
-require __DIR__ . '/../routes/route.php';
+$app->addRoutingMiddleware();
 
-$app->add(TwigMiddleware::create($app, $twig));
+$app->add(TwigMiddleware::createFromContainer($app, Twig::class));
+
+require __DIR__.'/../routes/route.php';
+
+$app->addErrorMiddleware(true, true, true);
 
 $app->run();

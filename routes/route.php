@@ -1,10 +1,10 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Views\Twig;
-use Slim\Views\TwigMiddleware;
+use Slim\App\Controllers\HomeController;
 
+$app->get('/', [HomeController::class, 'index']);
+
+/*
 $app->get('/', function (
     Request $request,
     Response $response
@@ -12,4 +12,4 @@ $app->get('/', function (
     $view = Twig::fromRequest($request);
 
     return $view->render($response, 'welcome.twig');
-});
+}); */

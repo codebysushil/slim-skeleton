@@ -1,19 +1,29 @@
 <?php
 
+use DI\ContainerBuilder;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
-use Slim\Views\TwigMiddleware;
 
-$container = new DI\Container;
+$containerBuilder = new ContainerBuilder;
 
-AppFactory::setContainer($container);
+// AppFactory::setContainer($container);
 
-// $app = AppFactory::create();
+// $twig = Twig::create(__DIR__.'/../views/templates', ['cache' => false]);
 
-// $container = $app->getContainer();
+$containerBuilder->addDefinitions([
+    Twig::class => function () {
+        $templatesPath = __DIR__.'/../views/templates';
 
-$twig = Twig::create(__DIR__ . '/../views/templates', [
-    'cache' => __DIR__.'/../storage/cache/twig',
-    'auto_reload' => true,
+        $settings = [
+            'cache' => __DIR__.'/../storage/cache/twig',
+            'auto_reload' => true,
+        ];
+
+        return Twig::create($templatesPath, $settings);
+    },
+    'view' => \DI\get(Twig::class),
 ]);
 
+$container = $containerBuilder->build();
+
+AppFactory::setContainer($container);
