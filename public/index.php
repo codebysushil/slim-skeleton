@@ -14,9 +14,11 @@ require __DIR__.'/../bootstrap/App.php';
 
 $app = AppFactory::create();
 
+$app->add(TwigMiddleware::create($app, $twig));
+
 $app->addRoutingMiddleware();
 
-$app->add(TwigMiddleware::createFromContainer($app, Twig::class));
+// $app->add(TwigMiddleware::createFromContainer($app, Twig::class));
 
 require __DIR__.'/../routes/route.php';
 

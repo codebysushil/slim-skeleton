@@ -8,12 +8,12 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Views\Twig;
 
-final class HomeController extends BaseController
+final class LoginController extends BaseController
 {
     public function index(Request $request, Response $response): Response
     {
         $view = Twig::fromRequest($request);
 
-        return $view->render($response, 'welcome.twig');
+        return $view->render($response, 'login.twig');
     }
 }

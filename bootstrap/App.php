@@ -2,16 +2,22 @@
 
 declare(strict_types=1);
 
-use DI\ContainerBuilder;
+use DI\Container;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
 
-$containerBuilder = new ContainerBuilder;
+$container = new Container();
 
-// AppFactory::setContainer($container);
+//$container->build();
 
-// $twig = Twig::create(__DIR__.'/../views/templates', ['cache' => false]);
+AppFactory::setContainer($container);
 
+$twig = Twig::create(__DIR__ . '/../views/templates', [
+    'cache' => __DIR__ . '/../storage/cache/twig',
+    'auto_reload' => true
+]);
+
+/*
 $containerBuilder->addDefinitions([
     Twig::class => function () {
         $templatesPath = __DIR__.'/../views/templates';
@@ -29,3 +35,5 @@ $containerBuilder->addDefinitions([
 $container = $containerBuilder->build();
 
 AppFactory::setContainer($container);
+ */
+
