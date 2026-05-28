@@ -4,7 +4,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/codebysushil/slim-skeleton?style=for-the-badge)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/sushilk/slim-skeleton?style=for-the-badge&logo=composer)
 ![GitHub License](https://img.shields.io/github/license/codebysushil/slim-skeleton?style=for-the-badge)
-[![Coverage Status](https://coveralls.io/repos/github/slimphp/Slim-Skeleton/badge.svg?branch=master)](https://coveralls.io/github/slimphp/Slim-Skeleton?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/codebysushil/slim-skeleton/badge.svg?branch=master)](https://coveralls.io/github/codebysushil/slim-skeleton?branch=main)
 
 Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest Slim 4 with Slim PSR-7 implementation and PHP-DI container implementation. It also uses the Monolog logger.
 
