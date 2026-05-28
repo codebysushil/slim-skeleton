@@ -11,20 +11,20 @@
     "type": "project",
     "require": {
         "php": "^8.3",
-        "slim/slim": "^4.15",
+        "slim/slim": "^4.15.2",
         "slim/psr7": "^1.8",
-        "php-di/php-di": "^7.1",
+        "php-di/php-di": "^7.1.1",
         "ext-json": "*",
         "monolog/monolog": "^3.10",
-        "vlucas/phpdotenv": "^5.6",
-        "slim/twig-view": "^3.4"
+        "vlucas/phpdotenv": "^5.6.3",
+        "slim/twig-view": "^3.4.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^13.1",
-        "laravel/pint": "^1.29",
-        "symfony/var-dumper": "^8.0",
-        "phpstan/phpstan": "^2.1",
-        "phpstan/extension-installer": "^1.4",
+        "phpunit/phpunit": "^13.1.11",
+        "laravel/pint": "^1.29.1",
+        "symfony/var-dumper": "^8.0.8",
+        "phpstan/phpstan": "^2.1.55",
+        "phpstan/extension-installer": "^1.4.3",
         "tomasvotruba/type-coverage": "^2.1"
     },
     "license": "MIT",
@@ -49,11 +49,11 @@
         "serve": "@php -S localhost:5000 -t public",
         "lint": "pint --parallel",
         "test:lint": "pint --parallel --test",
-        "test:type": "phpstan analyse",
+        "test:types": "phpstan",
         "test:unit": "phpunit",
         "test": [
             "@test:lint",
-            "@test:type",
+            "@test:types",
             "@test:unit"
         ]
     },
