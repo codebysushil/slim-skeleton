@@ -8,13 +8,13 @@ use Slim\Views\Twig;
 
 $container = new Container();
 
-//$container->build();
+// $container->build();
 
 AppFactory::setContainer($container);
 
-$twig = Twig::create(__DIR__ . '/../views/templates', [
-    'cache' => __DIR__ . '/../storage/cache/twig',
-    'auto_reload' => true
+$twig = Twig::create(__DIR__.'/../views/templates', [
+    'cache' => __DIR__.'/../storage/cache/twig',
+    'auto_reload' => true,
 ]);
 
 /*
@@ -36,4 +36,3 @@ $container = $containerBuilder->build();
 
 AppFactory::setContainer($container);
  */
-
