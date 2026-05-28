@@ -46,7 +46,16 @@
         }
     },
     "scripts": {
-        "serve": "@php -S localhost:5000 -t public"
+        "serve": "@php -S localhost:5000 -t public",
+        "lint": "pint --parallel",
+        "test:lint": "pint --parallel --test",
+        "test:type": "phpstan analyse",
+        "test:unit": "phpunit",
+        "test": [
+            "@test:lint",
+            "@test:type",
+            "@test:unit"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true
