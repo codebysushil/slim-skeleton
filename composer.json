@@ -33,6 +33,11 @@
             "Slim\\App\\": "app/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Slim\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Sushil Kumar",

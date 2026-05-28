@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Slim\App\Models;
 
-use Slim\App\Config\Database;
-
-class User
+final class User
 {
-    private string $table = "users";
+    private string $table = 'users';
 }
