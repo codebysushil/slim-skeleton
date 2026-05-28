@@ -21,6 +21,7 @@ jobs:
       with:
         php-version: '8.4'
         coverage: pcov
+        tools: composer:v2, phpunit
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -36,11 +37,12 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-    
-    - name: Run test suite
-      run: composer run-script test
-    
+
+    - name: Run PHPUnit Code Coverage
+      run: vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
+
     - name: Upload coverage reports
       uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        files: coverage.xml
