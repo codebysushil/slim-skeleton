@@ -6,7 +6,7 @@
 ![GitHub License](https://img.shields.io/github/license/codebysushil/slim-skeleton?style=for-the-badge)
 ![Coverage](https://codecov.io/gh/codebysushil/slim-skeleton/branch/main/graph/badge.svg)
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest Slim 4 with Slim PSR-7 implementation and PHP-DI container implementation. It also uses the Monolog logger.
+Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest **Slim 4** & **slim Twig** templates engine with **Slim PSR-7** implementation and **PHP-DI container** implementation. It also uses the **Monolog logger**.
 
 This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
 
