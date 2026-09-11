@@ -17,10 +17,10 @@ This skeleton application was built for Composer. This makes setting up a new Sl
 Run this command from the directory in which you want to install your new Slim Framework application. You will require PHP 8.3 or newer.
 
 ```bash
-composer create-project sushilk/slim-skeleton [my-app-name]
+composer create-project sushilk/slim-skeleton my-my-app
 ```
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+Replace `[my-slim-app]` with the desired directory name for your new application. You'll want to:
 
 * Point your virtual host document root to your new application's `public/` directory.
 * Ensure `logs/` is web writable.
@@ -28,13 +28,8 @@ Replace `[my-app-name]` with the desired directory name for your new application
 To run the application in development, you can run these commands 
 
 ```bash
-cd [my-app-name]
-composer start
-```
+cd my-slim-app
 
-Or you can use `docker-compose` to run the app with `docker`, so you can run these commands:
-```bash
-cd [my-app-name]
 docker-compose up -d
 ```
 After that, open `http://localhost:5000` in your browser.
