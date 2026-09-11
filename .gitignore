@@ -1,4 +1,5 @@
 .env
+.phpunit.cache/
 /vendor/
 /storage/cache/twig/*
 /storage/logs/*.log
