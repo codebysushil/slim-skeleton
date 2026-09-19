@@ -4,27 +4,90 @@ declare(strict_types=1);
 
 namespace Slim\App\Config;
 
-use Throwable;
+use PDO;
+use PDOException;
+use RuntimeException;
 
 final class Database
 {
-    public $db;
+    private readonly string $driver;
 
-    private string $host = '127.0.0.1';
+    private readonly string $host;
 
-    private string $username = 'root';
+    private readonly int $port;
 
-    private string $password = '';
+    private readonly string $dbname;
 
-    private string $database = 'slim';
+    private readonly string $charset;
+
+    private readonly string $username;
+
+    private readonly string $password;
 
     public function __construct()
     {
-        $this->db = null;
+        $this->driver = $this->env('DB_DRIVER', 'mysql');
+
+        $this->host = $this->env('DB_HOST', '127.0.0.1');
+
+        $this->port = (int) $this->env('DB_PORT', '3306');
+
+        $this->dbname = $this->env('DB_NAME', 'slim');
+
+        $this->charset = $this->env('DB_CHARSET', 'utf8mb4');
+
+        $this->username = $this->env('DB_USERNAME', 'root');
+
+        $this->password = $this->env('DB_PASSWORD', '');
+    }
+
+    public function getConnection(): PDO
+    {
+        $dns = sprintf(
+            '%s:host=%s;port=%d;dbname=%s;charset=%s',
+            $this->driver,
+            $this->host,
+            $this->port,
+            $this->dbname,
+            $this->charset
+        );
+
+        $options = [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        ];
+
         try {
-            $this->db = new mysqli(hostname: $this->host, username: $this->username, password: $this->password, database: $this->database);
-        } catch (Throwable $th) {
-            throw $th;
+            return new PDO(
+                $dns,
+                $this->username,
+                $this->password,
+                $options
+            );
+        } catch (PDOException $e) {
+            throw new RuntimeException(
+                'Database Connection failed.',
+                0,
+                $e
+            );
         }
+    }
+
+    private function env(
+        string $key,
+        ?string $default = null
+    ): string {
+        if (function_exists('getenv')) {
+            $value = getenv($key);
+
+            if ($value !== false && $value !== '') {
+                return $value;
+            }
+        }
+
+        if (isset($_ENV[$key]) && $_ENV[$key] !== '') {
+            return (string) $_ENV[$key];
+        }
+
+        return $default ?? '';
     }
 }

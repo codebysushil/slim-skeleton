@@ -20,7 +20,7 @@ $app->addRoutingMiddleware();
 
 // $app->add(TwigMiddleware::createFromContainer($app, Twig::class));
 
-require __DIR__.'/../routes/route.php';
+require __DIR__.'/../routes/web.php';
 
 $app->addErrorMiddleware(true, true, true);
 

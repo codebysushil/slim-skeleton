@@ -6,5 +6,5 @@ namespace Slim\App\Models;
 
 final class User
 {
-    private string $table = 'users';
+    // user table
 }
