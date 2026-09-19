@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use DI\Container;
+use Dotenv\Dotenv;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
-use Dotenv\Dotenv;
 
 $container = new Container();
 
