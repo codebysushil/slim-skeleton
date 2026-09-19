@@ -74,20 +74,11 @@ final class Database
 
     private function env(
         string $key,
-        ?string $default = null
+        string $default = ''
     ): string {
-        if (function_exists('getenv')) {
-            $value = getenv($key);
+        $value = $_ENV[$key] ?? getenv($key);
 
-            if ($value !== false && $value !== '') {
-                return $value;
-            }
-        }
+        return is_string($value) ? $value : $default;
 
-        if (isset($_ENV[$key]) && $_ENV[$key] !== '') {
-            return (string) $_ENV[$key];
-        }
-
-        return $default ?? '';
     }
 }
