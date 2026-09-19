@@ -76,9 +76,13 @@ final class Database
         string $key,
         string $default = ''
     ): string {
-        $value = $_ENV[$key] ?? getenv($key);
+        $value = getenv($key);
 
-        return is_string($value) ? $value : $default;
+        if ($value !== false) {
+            return $value;
+        }
+
+        return isset($_ENV[$key]) && is_string($_ENV[$key]) ? $_ENV[$key] : $default;
 
     }
 }
