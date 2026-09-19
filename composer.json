@@ -29,6 +29,9 @@
     },
     "license": "MIT",
     "autoload": {
+        "files": [
+            "app/Services/Functions.php"
+        ],
         "psr-4": {
             "Slim\\App\\": "app/"
         }

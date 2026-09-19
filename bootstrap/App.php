@@ -5,6 +5,7 @@ declare(strict_types=1);
 use DI\Container;
 use Slim\Factory\AppFactory;
 use Slim\Views\Twig;
+use Dotenv\Dotenv;
 
 $container = new Container();
 
@@ -17,6 +18,10 @@ $twig = Twig::create(__DIR__.'/../views/templates', [
     'auto_reload' => true,
 ]);
 
+$root = dirname(__DIR__);
+
+$dotenv = Dotenv::createImmutable($root);
+$dotenv->safeLoad();
 /*
 $containerBuilder->addDefinitions([
     Twig::class => function () {

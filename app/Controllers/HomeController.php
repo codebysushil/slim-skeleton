@@ -10,10 +10,12 @@ use Slim\Views\Twig;
 
 final class HomeController extends BaseController
 {
-    public function index(Request $request, Response $response): Response
-    {
-        $view = Twig::fromRequest($request);
-
-        return $view->render($response, 'welcome.twig');
+    public function index(Request $request, Response $response
+    ): Response {
+        return view(
+            $request,
+            $response,
+            'welcome'
+        );
     }
 }
