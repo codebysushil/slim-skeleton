@@ -4,6 +4,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/codebysushil/slim-skeleton?style=for-the-badge)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/sushilk/slim-skeleton?style=for-the-badge&logo=composer)
 ![GitHub License](https://img.shields.io/github/license/codebysushil/slim-skeleton?style=for-the-badge)
+[![Tests](https://github.com/codebysushil/slim-skeleton/actions/workflows/tests.yml/badge.svg)](https://github.com/codebysushil/slim-skeleton/actions/workflows/tests.yml)
 ![Coverage](https://codecov.io/gh/codebysushil/slim-skeleton/branch/main/graph/badge.svg)
 
 Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest **Slim 4** & **slim Twig** templates engine with **Slim PSR-7** implementation and **PHP-DI container** implementation. It also uses the **Monolog logger**. **MySQL** default database.
