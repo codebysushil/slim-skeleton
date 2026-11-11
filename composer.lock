@@ -1741,6 +1741,57 @@
     ],
     "packages-dev": [
         {
+            "name": "entropy/entropy",
+            "version": "0.4.36",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TomasVotruba/entropy.git",
+                "reference": "9f08272a96275d22a9d9808a32581392920626db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TomasVotruba/entropy/zipball/9f08272a96275d22a9d9808a32581392920626db",
+                "reference": "9f08272a96275d22a9d9808a32581392920626db",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=7.4",
+                "symfony/polyfill-php80": "^1.31"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.4",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.1",
+                "phpunit/phpunit": "^9.6",
+                "rector/jack": "^1.0",
+                "rector/rector": "^2.4",
+                "rector/swiss-knife": "^2.4",
+                "shipmonk/composer-dependency-analyser": "^1.8",
+                "shipmonk/dead-code-detector": "^1.4",
+                "symplify/easy-coding-standard": "^13.1",
+                "symplify/phpstan-rules": "^14.10",
+                "tomasvotruba/type-coverage": "^2.2",
+                "tracy/tracy": "^2.12"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Entropy\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "description": "Entropy framework",
+            "support": {
+                "issues": "https://github.com/TomasVotruba/entropy/issues",
+                "source": "https://github.com/TomasVotruba/entropy/tree/0.4.36"
+            },
+            "time": "2026-10-26T16:46:17+00:00"
+        },
+        {
             "name": "laravel/pint",
             "version": "v1.32.1",
             "source": {
@@ -2095,11 +2146,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.2.13",
+            "version": "2.3.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/9ba9ac76ee9c5cf5b56d58eb5deec6315b7a0260",
-                "reference": "9ba9ac76ee9c5cf5b56d58eb5deec6315b7a0260",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/645a1bd6bead15fc1b8474137467961d0fa30a79",
+                "reference": "645a1bd6bead15fc1b8474137467961d0fa30a79",
                 "shasum": ""
             },
             "require": {
@@ -2155,7 +2206,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-03T20:38:19+00:00"
+            "time": "2026-11-03T12:14:22+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3929,22 +3980,22 @@
         },
         {
             "name": "tomasvotruba/type-coverage",
-            "version": "2.3.6",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TomasVotruba/type-coverage.git",
-                "reference": "bb2e1d115bfc38b2b29c98ea64762d70607a684f"
+                "reference": "2d8e722c1776a17f506f6a66cd325e50fbaa12ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TomasVotruba/type-coverage/zipball/bb2e1d115bfc38b2b29c98ea64762d70607a684f",
-                "reference": "bb2e1d115bfc38b2b29c98ea64762d70607a684f",
+                "url": "https://api.github.com/repos/TomasVotruba/type-coverage/zipball/2d8e722c1776a17f506f6a66cd325e50fbaa12ee",
+                "reference": "2d8e722c1776a17f506f6a66cd325e50fbaa12ee",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.4",
-                "phpstan/phpstan": "^2.2",
-                "webmozart/assert": "^1.11 || ^2.1"
+                "entropy/entropy": "^0.4.23",
+                "php": ">=7.4",
+                "phpstan/phpstan": "^2.2"
             },
             "require-dev": {
                 "doctrine/collections": "^2.3",
@@ -3953,10 +4004,10 @@
                 "rector/jack": "^1.1",
                 "rector/rector": "^2.5",
                 "shipmonk/composer-dependency-analyser": "^1.8",
+                "shipmonk/dead-code-detector": "^1.4",
                 "symfony/dom-crawler": "^8.1",
                 "symfony/form": "^8.1",
                 "symplify/easy-coding-standard": "^13.2",
-                "tomasvotruba/unused-public": "^2.2",
                 "tracy/tracy": "^2.12"
             },
             "type": "phpstan-extension",
@@ -3984,7 +4035,7 @@
             ],
             "support": {
                 "issues": "https://github.com/TomasVotruba/type-coverage/issues",
-                "source": "https://github.com/TomasVotruba/type-coverage/tree/2.3.6"
+                "source": "https://github.com/TomasVotruba/type-coverage/tree/2.5.1"
             },
             "funding": [
                 {
@@ -3996,73 +4047,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-29T08:21:40+00:00"
-        },
-        {
-            "name": "webmozart/assert",
-            "version": "2.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webmozarts/assert.git",
-                "reference": "2ccb7c2e821038c03a3e6e1700c570c158c55f70"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/2ccb7c2e821038c03a3e6e1700c570c158c55f70",
-                "reference": "2ccb7c2e821038c03a3e6e1700c570c158c55f70",
-                "shasum": ""
-            },
-            "require": {
-                "ext-ctype": "*",
-                "ext-date": "*",
-                "ext-filter": "*",
-                "php": "^8.2"
-            },
-            "suggest": {
-                "ext-intl": "",
-                "ext-simplexml": "",
-                "ext-spl": ""
-            },
-            "type": "library",
-            "extra": {
-                "psalm": {
-                    "pluginClass": "Webmozart\\Assert\\PsalmPlugin"
-                },
-                "branch-alias": {
-                    "dev-master": "2.0-dev",
-                    "dev-feature/2-0": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Webmozart\\Assert\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
-                },
-                {
-                    "name": "Woody Gilk",
-                    "email": "woody.gilk@gmail.com"
-                }
-            ],
-            "description": "Assertions to validate method input/output with nice error messages.",
-            "keywords": [
-                "assert",
-                "check",
-                "validate"
-            ],
-            "support": {
-                "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/2.4.1"
-            },
-            "time": "2026-06-15T15:31:57+00:00"
+            "time": "2026-10-09T19:09:05+00:00"
         }
     ],
     "aliases": [],
